@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Upload file tramite Multer:</h1>
+    <div>
+    <form id="formUpload_file">
+        <input type="file" name ="Upload_file" />
+        <button type="submit">Salva file</button>
+    </form>
+</div>
+<hr/>
+
+<h1>Upload file tramite cloudinary:</h1>
+<div >
+<form id="formUpload_file">
+    <input type="file" name ="Upload_file_cloud" />
+    <button type="submit">Salva file</button>
+</form>
+</div>
+<hr/>
+
+<script>
+    //evento per il savataggio del file sul node tramite multer
+
+    document.querySelector("#formUpload")
+    .addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log(e.target[0].files[0])
+
+        let data = new formData()
+        data.append('uploaded_file', e.target[0].files[0])
+        fetch("http://localhost:3001/upload",{
+            method: 'post',
+            body: data
+        }).then(Response => Response.json())
+        .then(json => console.log(json))
+        .catch(err => console.error(err))
+    })
+    // evento per il savataggio del file sul cloudinary tramite multer e cloudinary
+    document.querySelector("#formUploadCloud")
+    .addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log(e.target[0].files[0])
+
+        let data = new formData()
+        data.append('uploaded_file', e.target[0].files[0])
+        fetch("http://localhost:3001/upload-cloud",{
+            method: 'post',
+            body: data
+        }).then(Response => Response.json())
+        .then(json => console.log(json))
+        .catch(err => console.error(err))
+    })
+</script>
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+ 1. Tutte le risorse con isActive: true
+ Query:
+ { "isActive": true }
+ 2. Tutte le risorse con age > 26
+ Query:
+ { "age": { "$gt": 26 } }
+ 3. Tutte le risorse con age > 26 e age <= 30
+ Query:
+ { "age": { "$gt": 26, "$lte": 30 } }
+ 4. Tutte le risorse con eyes brown o blue
+ Query:
+ { "eyes": { "$in": ["brown", "blue"] } }
+ 5. Tutte le risorse che non hanno eyes: green
+ Query:
+ { "eyes": { "$ne": "green" } }
+ 6. Tutte le risorse che non hanno eyes: green né blue
+ Query:
+ { "eyes": { "$nin": ["green", "blue"] } }
+ 7. Tutte le risorse con company: FITCORE, mostra solo email
+ Query:
+ { "company": "FITCORE" }  + project: { "email": 1, "_id": 0 }

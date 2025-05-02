@@ -1,0 +1,77 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 20px;
+  
+}
+
+div.container-fluid {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #021223 !important;
+}
+
+.navbar-nav .nav-link {
+  color: #02060a !important;
+  margin-right: 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #04070c !important; /* Bootstrap primary color */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.form-control {
+  border-radius: 50px;
+  padding: 8px 15px;
+}
+
+.btn-outline-success {
+  color: #f8f9fa !important;
+  border-color: #0d6efd !important;
+}
+
+.btn-outline-success:hover {
+  background-color: #0d6efd !important;
+  color: white !important;
+}
+  /* Stile per la card */
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* Limita la larghezza della card */
+  }
+  img.card-img-top{
+    width: 125px;
+  }
+  div.card-body{
+    font-size: 5px;
+  }
+  div.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100vh;
+  }
+  
+
+  /* div.col-md3.col-6{
+    display: flex;
+    flex-direction: row;
+  } */
+ 
